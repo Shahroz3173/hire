@@ -15,7 +15,7 @@ const useAuth = () => {
         try {
             setLoading(true);
             const data = await login({ email, password });
-            setUser(data.user);
+            setUser(data.session ? data.user : null);
             return data;
         } catch (error) {
             console.error(error);

@@ -164,7 +164,7 @@ const Register = () => {
   const debouncedUsername = useDebounce(formData.username);
   const debouncedEmail    = useDebounce(formData.email);
 
-  const { loading } = useAuth();
+  const { loading, handleRegister } = useAuth();
   const navigate    = useNavigate();
 
   useEffect(() => {
@@ -224,21 +224,12 @@ const Register = () => {
 
     setSubmitLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/register`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setIsOtpSent(true);
-        setVerificationMessage("Verification code sent to your email.");
-        setShowOtpModal(true);
-      } else {
-        setFormError(data.message || "Registration failed.");
-      }
-    } catch {
-      setFormError("Network error. Please try again.");
+      await handleRegister(formData);
+      setIsOtpSent(true);
+      setEmailVerified(true);
+      setVerificationMessage("Confirmation email sent. Confirm your email, then log in.");
+    } catch (error) {
+      setFormError(error?.message || "Registration failed.");
     } finally {
       setSubmitLoading(false);
     }
@@ -342,7 +333,7 @@ const Register = () => {
                   text={
                     submitLoading ? "Sending..." :
                     isOtpSent ? "Awaiting OTP verification" :
-                    "Send Verification Code"
+                    "Create Account"
                   }
                   disabled={
                     submitLoading ||

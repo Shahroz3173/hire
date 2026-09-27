@@ -1,9 +1,4 @@
-import axios from "axios";
-
-const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
-    withCredentials: true,
-})
+import api from './api.js'
 
 export const generateInterviewReport = async ({title, jobDescription, selfDescription, resumeFile }) => {
 
@@ -13,7 +8,7 @@ export const generateInterviewReport = async ({title, jobDescription, selfDescri
     formData.append("selfDescription", selfDescription)
     formData.append("resume", resumeFile)
 
-    const response = await api.post("/api/v1/interview/", formData, {
+    const response = await api.post("/interview/", formData, {
         headers: {
             "Content-Type": "multipart/form-data"
         }
@@ -24,18 +19,18 @@ export const generateInterviewReport = async ({title, jobDescription, selfDescri
 }
 
 export const getInterviewReportById = async (interviewId) => {
-    const response = await api.get(`/api/v1/interview/report/${interviewId}`)
+    const response = await api.get(`/interview/report/${interviewId}`)
     return response.data
 }
 
 export const getAllInterviewReports = async () => {
-    const response = await api.get("/api/v1/interview/reports")
+    const response = await api.get("/interview/reports")
 
     return response.data
 }
 
 export const generateResumePdf = async ({ interviewReportId }) => {
-    const response = await api.post(`/api/v1/interview/resume/pdf/${interviewReportId}`, null, {
+    const response = await api.post(`/interview/resume/pdf/${interviewReportId}`, null, {
         responseType: "blob"
     })
 
@@ -43,6 +38,6 @@ export const generateResumePdf = async ({ interviewReportId }) => {
 }
 
 export const deleteInterviewReport = async ({ interviewId }) => {
-    const response = await api.delete(`/api/v1/interview/report/${interviewId}`)
+    const response = await api.delete(`/interview/report/${interviewId}`)
     return response.data
 }

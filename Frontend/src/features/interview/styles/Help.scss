@@ -12,7 +12,7 @@
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #f43f5e;
+    color: #2dd4bf;
     margin-bottom: 10px;
   }
 
@@ -42,7 +42,7 @@
     .logo-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: #f43f5e;
+      background: #2dd4bf;
       flex-shrink: 0;
     }
   }
@@ -101,7 +101,7 @@
     transition: border-color 0.15s;
     overflow: hidden;
 
-    &.is-open { border-color: rgba(244, 63, 94, 0.3); }
+    &.is-open { border-color: rgba(45, 212, 191, 0.3); }
 
     &-question {
       width: 100%;
@@ -121,7 +121,7 @@
       .chevron { color: #52525b; flex-shrink: 0; transition: transform 0.2s; }
     }
 
-    &.is-open &-question .chevron { transform: rotate(180deg); color: #f43f5e; }
+    &.is-open &-question .chevron { transform: rotate(180deg); color: #2dd4bf; }
 
     &-answer {
       font-size: 0.84rem;
@@ -148,7 +148,7 @@
       color: #71717a;
       line-height: 1.75;
 
-      a { color: #f43f5e; text-decoration: none; &:hover { text-decoration: underline; } }
+      a { color: #2dd4bf; text-decoration: none; &:hover { text-decoration: underline; } }
     }
   }
 

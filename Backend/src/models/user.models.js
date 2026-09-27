@@ -1,6 +1,11 @@
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
+    supabaseId: {
+        type: String,
+        unique: true,
+        sparse: true
+    },
     username: {
         type: String,
         unique: [true, "Username already exists"],
@@ -13,7 +18,6 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, "Password is required"],
         select: false
     },
     verified: {

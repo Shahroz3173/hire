@@ -62,11 +62,11 @@
       }
 
       &.active {
-        background: rgba(244, 63, 94, 0.12);
-        color: #f43f5e;
+        background: rgba(45, 212, 191, 0.12);
+        color: #2dd4bf;
 
         .nav-icon svg {
-          stroke: #f43f5e;
+          stroke: #2dd4bf;
         }
       }
     }
@@ -140,9 +140,9 @@
         .q-num {
           font-size: 0.7rem;
           font-weight: 700;
-          color: #f43f5e;
-          background: rgba(244, 63, 94, 0.1);
-          border: 1px solid rgba(244, 63, 94, 0.2);
+          color: #2dd4bf;
+          background: rgba(45, 212, 191, 0.1);
+          border: 1px solid rgba(45, 212, 191, 0.2);
           padding: 2px 7px;
           border-radius: 5px;
           flex-shrink: 0;
@@ -220,7 +220,7 @@
       border-radius: 12px;
       padding: 18px 20px;
 
-      &.priority-high { border-left-color: #f43f5e; }
+      &.priority-high { border-left-color: #2dd4bf; }
       &.priority-medium { border-left-color: #f59e0b; }
       &.priority-low { border-left-color: #3b82f6; }
 
@@ -351,9 +351,9 @@
         line-height: 1.4;
 
         &.gap-red {
-          background: rgba(244, 63, 94, 0.12);
-          color: #fda4af;
-          border: 1px solid rgba(244, 63, 94, 0.2);
+          background: rgba(45, 212, 191, 0.12);
+          color: #99f6e4;
+          border: 1px solid rgba(45, 212, 191, 0.2);
         }
 
         &.gap-orange {
@@ -412,10 +412,10 @@
     align-items: center;
     margin-top: auto;
     padding: 10px 14px;
-    background: rgba(244, 63, 94, 0.1);
-    border: 1px solid rgba(244, 63, 94, 0.2);
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.2);
     border-radius: 9px;
-    color: #f43f5e;
+    color: #2dd4bf;
     font-size: 0.8rem;
     font-weight: 600;
     font-family: inherit;
@@ -425,8 +425,8 @@
     justify-content: center;
 
     &:hover {
-      background: rgba(244, 63, 94, 0.18);
-      border-color: rgba(244, 63, 94, 0.35);
+      background: rgba(45, 212, 191, 0.18);
+      border-color: rgba(45, 212, 191, 0.35);
     }
   }
 
@@ -434,15 +434,15 @@
   .score-label {
     &.score--high { color: #22c55e; }
     &.score--mid  { color: #f59e0b; }
-    &.score--low  { color: #f43f5e; }
+    &.score--low  { color: #2dd4bf; }
   }
 
   // ── Gap tag severity (from API) ───────────────────────
   .gap-tag {
     &.gap-high {
-      background: rgba(244, 63, 94, 0.12);
-      color: #fda4af;
-      border: 1px solid rgba(244, 63, 94, 0.2);
+      background: rgba(45, 212, 191, 0.12);
+      color: #99f6e4;
+      border: 1px solid rgba(45, 212, 191, 0.2);
     }
     &.gap-medium {
       background: rgba(245, 158, 11, 0.12);

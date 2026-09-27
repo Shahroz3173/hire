@@ -12,7 +12,7 @@
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #f43f5e;
+    color: #2dd4bf;
     margin-bottom: 10px;
   }
 
@@ -42,7 +42,7 @@
     .logo-dot {
       width: 8px; height: 8px;
       border-radius: 50%;
-      background: #f43f5e;
+      background: #2dd4bf;
       flex-shrink: 0;
     }
   }
@@ -97,7 +97,7 @@
         color: #71717a;
         line-height: 1.75;
 
-        a { color: #f43f5e; text-decoration: none; &:hover { text-decoration: underline; } }
+        a { color: #2dd4bf; text-decoration: none; &:hover { text-decoration: underline; } }
       }
     }
   }

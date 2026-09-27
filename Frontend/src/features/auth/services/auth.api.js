@@ -1,56 +1,34 @@
-import axios from 'axios'
-
-const api = axios.create({
-    baseURL: `${import.meta.env.VITE_API_URL}/api/v1`,
-    withCredentials: true,
-})
+import api from './api.js'
+import supabase from '../../../utils/supabase.js'
 
 const register = async ({ username, email, password }) => {
-    try {
-        const res = await api.post('/auth/register', {
-            username,
-            email,
-            password,
-        })
-        return res.data
-    } 
-    catch (err) {
-        console.error(err)
-        throw err
-    }
+    const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+            data: { username },
+            emailRedirectTo: `${window.location.origin}/login`
+        }
+    })
+    if (error) throw error
+    return data
 }
 
 const login = async ({ email, password }) => {
-    try {
-        const res = await api.post('/auth/login', { email, password })
-        return res.data
-    } 
-    catch (err) {
-        console.error(err)
-        throw err
-    }
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+    const profile = await api.get('/auth/user')
+    return { ...data, user: profile.data.user }
 }
 
 const logout = async () => {
-    try {
-        const res = await api.post('/auth/logout')
-        return res.data
-    } 
-    catch (err) {
-        console.error(err)
-        throw err
-    }
+    const { error } = await supabase.auth.signOut()
+    if (error) throw error
 }
 
 const UserDetails = async () => {
-    try {
-        const res = await api.get('/auth/user')
-        return res.data
-    } 
-    catch (err) {
-        console.error(err)
-        throw err
-    }
+    const res = await api.get('/auth/user')
+    return res.data
 }
 
 export {

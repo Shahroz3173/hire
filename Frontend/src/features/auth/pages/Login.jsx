@@ -31,8 +31,9 @@ const Login = () => {
       navigate("/home"); 
     } catch (err) {
       setFormError(
-        err?.response?.data?.message ||
-        err?.message ||
+        err?.message?.includes("Email not confirmed")
+          ? "Please confirm your email before logging in."
+          : err?.message ||
         "Invalid email or password."
       );
     }
