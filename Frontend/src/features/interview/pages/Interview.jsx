@@ -42,7 +42,7 @@ const ScoreRing = ({ score }) => {
   const color = score >= 80 ? "#22c55e" : score >= 60 ? "#f59e0b" : "#f43f5e";
   return (
     <svg width="110" height="110" viewBox="0 0 110 110">
-      <circle cx="55" cy="55" r={r} fill="none" stroke="#1e1e22" strokeWidth="8" />
+      <circle cx="55" cy="55" r={r} fill="none" stroke="#dbe4e5" strokeWidth="8" />
       <circle
         cx="55" cy="55" r={r} fill="none"
         stroke={color} strokeWidth="8"
@@ -50,7 +50,7 @@ const ScoreRing = ({ score }) => {
         strokeLinecap="round"
         transform="rotate(-90 55 55)"
       />
-      <text x="55" y="52" textAnchor="middle" fill="#f8fafc" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif">{score}</text>
+      <text x="55" y="52" textAnchor="middle" fill="#000000" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif">{score}</text>
       <text x="55" y="66" textAnchor="middle" fill="#64748b" fontSize="10" fontFamily="Inter, sans-serif">%</text>
     </svg>
   );

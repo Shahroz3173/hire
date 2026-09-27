@@ -5,7 +5,7 @@ const LoadingState = ({ text }) => {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "#09090b",
+      background: "#f4f7f7",
       fontFamily: "'Inter', -apple-system, sans-serif",
     }}>
       <style>{`
@@ -38,7 +38,7 @@ const LoadingState = ({ text }) => {
           <div style={{
             position: "absolute", inset: 0,
             borderRadius: "50%",
-            border: "2.5px solid #1c1c1e",
+            border: "2.5px solid #dbe4e5",
           }} />
           {/* Spinner */}
           <div style={{
@@ -67,7 +67,7 @@ const LoadingState = ({ text }) => {
             margin: "0 0 6px",
             fontSize: "0.95rem",
             fontWeight: 600,
-            color: "#f4f4f5",
+            color: "#243b40",
             letterSpacing: "-0.01em",
           }}>
             {text || "Hold on tight…"}
@@ -75,7 +75,7 @@ const LoadingState = ({ text }) => {
           <p style={{
             margin: 0,
             fontSize: "0.78rem",
-            color: "#52525b",
+            color: "#607277",
             animation: "shimmer 2s ease infinite",
           }}>
             This won't take long…

@@ -4,6 +4,7 @@ import App from './App.jsx'
 import { AuthProvider } from './features/auth/auth.context.jsx'
 import { InterviewProvider } from './features/interview/interview.context.jsx'
 import './style.scss'
+import './light-theme.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

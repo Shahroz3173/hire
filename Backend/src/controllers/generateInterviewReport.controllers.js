@@ -11,7 +11,14 @@ async function parseResumeText(file) {
         parser.on("pdfParser_dataReady", (data) => {
             const text = data.Pages
                 .flatMap(p => p.Texts)
-                .map(t => decodeURIComponent(t.R.map(r => r.T).join("")))
+                .map(t => {
+                    const encodedText = t.R.map(r => r.T).join("");
+                    try {
+                        return decodeURIComponent(encodedText);
+                    } catch {
+                        return encodedText;
+                    }
+                })
                 .join(" ")
                 .trim();
             resolve(text);
