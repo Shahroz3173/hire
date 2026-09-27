@@ -498,3 +498,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 Made with ❤️ by <a href="https://github.com/harshhere905">harshhere905</a><br><br>
 ⭐ <strong>Star this repo if you found it helpful!</strong> ⭐
 </div>
+# main-hiresync
